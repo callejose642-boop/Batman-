@@ -1,0 +1,176 @@
+/* ==========================================================================
+   1. VARIABLES GLOBALES Y RESETEO 
+   ========================================================================== */
+:root {
+    --color-fondo-oscuro: #060608;
+    --color-tarjeta-bg: #111115;
+    --color-rojo-batman: #e50914;
+    --color-rojo-hover: #ff1e27;
+    --color-texto-principal: #f1f5f9;
+    --color-texto-secundario: #94a3b8;
+    --fuente-principal: 'Lexend Deca', sans-serif; /* Fuente externa  */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Selector de Tipo para el Cuerpo del Sitio ] */
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo-oscuro); /* Color de fondo  */
+    color: var(--color-texto-principal);     /* Color de texto  */
+    margin: 0;                                 /* Margen  */
+    padding: 4rem 1.25rem;                    /* Padding  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==========================================================================
+   2. CONTENEDOR MAESTRO (Uso estricto de Selector de ID obligatorio) [cite: 30]
+   ========================================================================== */
+#tarjeta-pelicula {
+    background-color: var(--color-tarjeta-bg);
+    max-width: 650px;
+    width: 100%;
+    padding: 2.5rem;                           /* Padding de caja  */
+    margin: 0 auto;                            /* Margen de caja  */
+    
+    /* Configuración exhaustiva de bordes y sombras de profundidad */
+    border: 1px solid rgba(229, 9, 20, 0.35);  /* Borde solicitado  */
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 
+                0 0 25px rgba(229, 9, 20, 0.05);
+}
+
+/* ==========================================================================
+   3. TIPOGRAFÍAS Y ENCABEZADOS 
+   ========================================================================== */
+.banner-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+h1 {
+    font-size: 2.85rem;
+    font-weight: 700;
+    color: var(--color-rojo-batman);          /* Color de texto  */
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 0;
+    text-shadow: 0 4px 12px rgba(229, 9, 20, 0.4);
+}
+
+.tagline {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--color-texto-secundario);
+    font-style: italic;
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #ffffff;
+    border-left: 4px solid var(--color-rojo-batman);
+    padding-left: 14px;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.5px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+    text-align: justify;
+    margin: 0 0 1.5rem 0;
+}
+
+/* ==========================================================================
+   4. ESTRUCTURAS DE LISTAS (Estilizado avanzado de datos)
+   ========================================================================== */
+.lista-especificaciones {
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.lista-especificaciones li {
+    background-color: #17171f;
+    padding: 0.85rem 1.25rem;                  /* Padding interno de celdas  */
+    margin-bottom: 0.65rem;                    /* Margen inferior divisor  */
+    border-radius: 6px;
+    border-left: 3px solid #334155;            /* Detalle de borde izquierdo  */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.etiqueta {
+    font-weight: 600;
+    color: var(--color-rojo-batman);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.valor {
+    color: var(--color-texto-principal);
+}
+
+/* ==========================================================================
+   5. COMPONENTES MULTIMEDIA (Selectores de Clase) 
+   ========================================================================== */
+.contenedor-imagen {
+    text-align: center;
+    margin: 2.5rem 0;                          /* Margen para aislar el contenedor  */
+}
+
+.imagen-poster {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Transición de escalado al pasar el cursor sobre las imágenes */
+.imagen-poster:hover {
+    transform: scale(1.025);
+}
+
+/* ==========================================================================
+   6. INTERACTIVIDAD Y BOTONES 
+   ========================================================================== */
+.pie-pagina {
+    margin-top: 3rem;
+}
+
+.boton-enlace {
+    display: block;
+    text-align: center;
+    background-color: var(--color-rojo-batman);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1.1rem;                           /* Relleno interno  */
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 6px 20px rgba(229, 9, 20, 0.35);
+    transition: all 0.3s ease;
+}
+
+/* Aplicación estricta de la pseudoclase :hover interactiva  */
+.boton-enlace:hover {
+    background-color: #ffffff;                 /* Cambio dinámico de color de fondo  */
+    color: var(--color-fondo-oscuro);          /* Cambio dinámico de color de texto  */
+    box-shadow: 0 0 25px var(--color-rojo-hover);
+    transform: translateY(-3px);               /* Efecto de elevación física */
+}
